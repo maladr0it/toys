@@ -1,0 +1,88 @@
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  background: #f7f7f7;
+}
+
+.Nav-list {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 8px;
+  background: #f0ede5;
+  color: #0e2065;
+  list-style: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+.NavItem {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.NavItem-label {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.NavItem-contentContainer {
+  position: absolute;
+  display: flex;
+  opacity: 0;
+  visibility: collapse;
+  z-index: 200;
+  cursor: auto;
+}
+
+.NavItem:hover .NavItem-contentContainer {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease-in;
+  transition-delay: 0.1s;
+}
+
+.NavItem-content {
+  padding: 0 16px;
+  margin-top: 8px;
+  color: #0e2065;
+}
+
+.Nav-box {
+  position: absolute;
+  transition: opacity 0.2s ease-out;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.Nav-box--switch {
+  transition: transform, height, width;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+.Nav-box--show {
+  opacity: 1;
+  animation: enter 0.2s ease-out;
+}
+
+@keyframes enter {
+  from {
+    top: -32px;
+  }
+  to {
+    top: 0;
+  }
+}

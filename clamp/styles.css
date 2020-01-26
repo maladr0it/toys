@@ -1,0 +1,11 @@
+body {
+}
+
+#clamped {
+  font-size: 2rem;
+  width: 300px;
+  margin: auto;
+  line-height: 1.2;
+  overflow-y: hidden;
+  background: pink;
+}
